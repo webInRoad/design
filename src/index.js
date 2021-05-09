@@ -1,4 +1,5 @@
-import './00-oo-2'
+// import './00-oo-2'
+import './05-装饰者模式-4'
 // class Person {
 // 	constructor(name, age) {
 // 		this.name = name
