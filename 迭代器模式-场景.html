@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="div1">
+			<a href="#">a1</a>
+			<a href="#">a2</a>
+			<a href="#">a3</a>
+			<a href="#">a4</a>
+			<a href="#">a5</a>
+		</div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+		<script>
+			// 不采用迭代器模式之前,如下数组,nodeList,jQuery 的遍历都不一样
+			// let arr = [1, 2, 3]
+			// arr.forEach((item) => {
+			// 	console.info(item)
+			// })
+			// let nodeList = document.getElementsByTagName('a')
+			// // Uncaught TypeError: nodeList.forEach is not a function
+			// // nodeList.forEach((item) => {
+			// // 	console.info(item)
+			// // })
+			// let i,
+			// 	length = nodeList.length
+			// for (i = 0; i < length; i++) {
+			// 	console.info(nodeList[i].innerHTML)
+			// }
+			// let $a = $('a')
+			// $a.each((index, item) => {
+			// 	console.info(index, item.textContent)
+			// })
+
+			// 采用迭代器模式,统一成一个函数处理,但这个跟外观模式不一样,外观模式是包了一层,里头分别调用不同的方法;而迭代器则是重新定义了一个
+			function each(data) {
+				data = $(data)
+				data.each((index, item) => {
+					console.info(index, item)
+				})
+			}
+			let arr = [1, 2, 3]
+			let nodeList = document.getElementsByTagName('a')
+			let $a = $('a')
+			each(arr)
+			each(nodeList)
+			each($a)
+		</script>
+	</body>
+</html>

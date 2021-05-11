@@ -4,23 +4,23 @@ class SingleObjecct {
 	}
 }
 
-// SingleObjecct.getInstance = function () {
-// 	let instance = null
-// 	if (!instance) {
-// 		instance = new SingleObjecct()
-// 	}
-// 	return instance
-// }
-
-SingleObjecct.getInstance = (function () {
-	let instance = null
-	return function () {
-		if (!instance) {
-			instance = new SingleObjecct()
-		}
-		return instance
+let instance = null
+SingleObjecct.getInstance = function () {
+	if (!instance) {
+		instance = new SingleObjecct()
 	}
-})()
+	return instance
+}
+
+// SingleObjecct.getInstance = (function () {
+// 	let instance = null
+// 	return function () {
+// 		if (!instance) {
+// 			instance = new SingleObjecct()
+// 		}
+// 		return instance
+// 	}
+// })()
 // 测试,这里只能用getInstance 才能保证单例，如果用 new SingleObject 就没办法保证了
 let single1 = SingleObjecct.getInstance()
 single1.login()
