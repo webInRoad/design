@@ -1,5 +1,5 @@
 // import './00-oo-2'
-import './08-迭代器模式-Generator'
+import './09-状态模式-promise'
 // class Person {
 // 	constructor(name, age) {
 // 		this.name = name
