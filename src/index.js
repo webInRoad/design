@@ -1,5 +1,6 @@
 // import './00-oo-2'
-import './16-中介者模式'
+import App from './shoppingCart/app'
+new App().init()
 // class Person {
 // 	constructor(name, age) {
 // 		this.name = name
