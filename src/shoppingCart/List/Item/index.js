@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import StateMachine from 'javascript-state-machine'
 import getCart from '../../Cart'
+import { log } from '../../util/log'
 class Item {
 	constructor(list, itemData) {
 		this.list = list
@@ -45,9 +46,11 @@ class Item {
 		updateText()
 		this.$el.append($btn)
 	}
+	@log('add')
 	handleAddToCart() {
 		this.cart.add(this.itemData)
 	}
+	@log('del')
 	handleRemoveFromCart() {
 		this.cart.del(this.itemData.id)
 	}
